@@ -1,12 +1,14 @@
 import { createContext } from "react";
-import Number from "../data/types";
 
-interface NumbersContextStructure {
-  numbers: Number[];
+interface PhoneContextStructure {
+  numbers: number[];
+  loadNumbers: (numbers: number[]) => void;
+
+  addNumber: (numbers: number) => void;
 }
 
-const NumbersContext = createContext<NumbersContextStructure>(
-  {} as NumbersContextStructure
+const NumbersContext = createContext<PhoneContextStructure>(
+  {} as PhoneContextStructure
 );
 
 export default NumbersContext;
