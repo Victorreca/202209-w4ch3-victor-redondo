@@ -1,0 +1,16 @@
+name: Audit
+
+on: push
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Audit
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+      - name: Install modules
+        run: npm ci
+      - name: ESLint validation
+        run: npx eslint .
