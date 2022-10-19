@@ -20,8 +20,14 @@ const NumbersContextProvider = ({
     setNumbers([...numbers, number]);
   };
 
+  const deleteNumber = (): void => {
+    setNumbers(numbers.slice(0, numbers.length - 1));
+  };
+
   return (
-    <PhoneContext.Provider value={{ numbers, loadNumbers, addNumber }}>
+    <PhoneContext.Provider
+      value={{ numbers, loadNumbers, addNumber, deleteNumber }}
+    >
       {children}
     </PhoneContext.Provider>
   );

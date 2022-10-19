@@ -3,7 +3,7 @@ import { createContext } from "react";
 interface PhoneContextStructure {
   numbers: number[];
   loadNumbers: (numbers: number[]) => void;
-
+  deleteNumber: () => void;
   addNumber: (numbers: number) => void;
 }
 

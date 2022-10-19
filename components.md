@@ -6,6 +6,9 @@
 
 ## Data modifications
 
+- Delete the last number
+- Add number
+
 # Components
 
 ## App
@@ -29,11 +32,17 @@
 
 ### Show data
 
-- A list of numbers
-  - Key:
-  - A Button component:
-  - given each number of the array of numbers
-  - for each number in the array of numbers
+- The keys components
+
+## Key
+
+### Show data
+
+- The received text inside a button
+
+### Get actions
+
+- Send the button content to data context
 
 ## Display
 
