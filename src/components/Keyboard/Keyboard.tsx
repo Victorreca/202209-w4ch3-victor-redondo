@@ -6,7 +6,7 @@ import { useContext } from "react";
 const Keyboard = (): JSX.Element => {
   const keyboardValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-  const { addNumber } = useContext(PhoneContext);
+  const { addNumber, deleteNumber } = useContext(PhoneContext);
 
   return (
     <div className="keyboard-container">
@@ -23,7 +23,13 @@ const Keyboard = (): JSX.Element => {
           );
         })}
         <li key={keyboardValues.length + 1}>
-          <Key className="key big" text="delete" action={() => {}} />
+          <Key
+            className="key big"
+            text="delete"
+            action={() => {
+              deleteNumber();
+            }}
+          />
         </li>
       </ol>
     </div>
