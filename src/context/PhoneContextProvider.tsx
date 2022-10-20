@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import PhoneContext from "./PhoneContext";
 
 interface NumbersContextProviderProps {
@@ -9,10 +9,6 @@ const NumbersContextProvider = ({
   children,
 }: NumbersContextProviderProps): JSX.Element => {
   const [numbers, setNumbers] = useState<number[]>([]);
-
-  const loadNumbers = useCallback((numbers: number[]) => {
-    setNumbers([...numbers]);
-  }, []);
 
   const addNumber = (number: number) => {
     if (numbers.length > 8) return;
@@ -25,9 +21,7 @@ const NumbersContextProvider = ({
   };
 
   return (
-    <PhoneContext.Provider
-      value={{ numbers, loadNumbers, addNumber, deleteNumber }}
-    >
+    <PhoneContext.Provider value={{ numbers, addNumber, deleteNumber }}>
       {children}
     </PhoneContext.Provider>
   );
